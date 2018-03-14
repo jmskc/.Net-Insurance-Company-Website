@@ -1,0 +1,30 @@
+.call {
+  display:flex;
+  justify-content:center;
+  padding:20px 0 20px 0;
+}
+
+.call .material-icons {
+  font-size:2.5em;
+  color:rgb(37,95,153);
+  padding-right:10px;
+}
+
+.call .text-center {
+  font-size:1.25em;
+}
+
+.call .glyphicon.glyphicon-phone {
+  font-size:1.5em;
+  padding-right:10px;
+}
+
+#team {
+  padding-bottom:50px;
+  background-color:#edf7de;
+  background-image:url("../../assets/img/office.png");
+  background-position:left;
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+

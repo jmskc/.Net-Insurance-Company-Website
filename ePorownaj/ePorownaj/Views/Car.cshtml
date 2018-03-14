@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "WebBase.cshtml";
+}
+
+@{ Html.RenderPartial("_Article");}
+
+@if (TempData["ContactSuccess"] != null && (bool)TempData["ContactSuccess"])
+{
+    { Html.RenderPartial("_Success"); }
+}
+else
+{
+    { Html.RenderAction("RenderForm", "FormCarSurface"); }
+}
+@{Html.RenderPartial("_Brands");}
+@{Html.RenderPartial("_Contact");}

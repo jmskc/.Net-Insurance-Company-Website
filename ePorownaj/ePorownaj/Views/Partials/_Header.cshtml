@@ -1,0 +1,32 @@
+﻿@inherits UmbracoViewPage
+<div>
+    <div class="header-blue" style="background-image:url(&quot;/assets/img/top-transparent.png&quot;);">
+        <nav class="navbar navbar-default navigation-clean-search">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"> <img src="/assets/img/logo.png"></a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active" role="presentation"><a href="/">Strona Główna </a></li>
+                        <li role="presentation"><a href="/Samochód">Samochód </a></li>
+                        <li role="presentation"><a href="/Nieruchomości">Nieruchomości </a></li>
+                        <li role="presentation"><a href="/Firma">Firma</a></li>
+                        <li role="presentation"><a href="/Życie">Życie</a></li>
+                        <li role="presentation"><a href="/Kontakt">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container hero">
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-0">
+                    <h1>@Umbraco.Field("naglowekTytul", recursive: true)</h1>
+                    <p>@Umbraco.Field("naglowekZajawka", recursive: true)</p>
+                </div>
+                <div class="col-lg-6 col-lg-offset-0 col-md-5 col-md-offset-1 hidden-xs hidden-sm phone-holder"></div>
+            </div>
+        </div>
+    </div>
+</div>

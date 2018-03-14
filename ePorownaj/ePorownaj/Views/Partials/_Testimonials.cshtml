@@ -1,0 +1,63 @@
+﻿@inherits UmbracoViewPage
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+    @{ 
+        string imgOne = "";
+        string imgTwo = "";
+        string imgThree = "";
+        if (Model.Content.HasValue("pozycja1Zdjecie"))
+        {
+            imgOne = Model.Content.GetPropertyValue<IPublishedContent>("pozycja1Zdjecie").Url;
+        }
+        if (Model.Content.HasValue("pozycja2Zdjecie"))
+        {
+            imgTwo = Model.Content.GetPropertyValue<IPublishedContent>("pozycja2Zdjecie").Url;
+        }
+        if (Model.Content.HasValue("pozycja3Zdjecie"))
+        {
+            imgThree = Model.Content.GetPropertyValue<IPublishedContent>("pozycja3Zdjecie").Url;
+        }
+    }
+<div data-aos="fade-up" class="testimonials-clean" style="background-image:url(&quot;assets/img/laptop2.png&quot;);">
+    <div class="intro">
+        <h2 class="text-center">Nasi klienci nas polecają</h2>
+        <p class="text-center">@Umbraco.Field("opinieZajawka", recursive: true)</p>
+    </div>
+    <div class="container">
+        <div class="intro"></div>
+        <div class="row people">
+            <div class="col-md-4 col-sm-6 item">
+                <div class="box">
+                    <div class="rate"><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i></div>
+                    <p class="description">@Umbraco.Field("pozycja1Opinia")</p>
+                </div>
+                <div class="author">
+                    <img class="img-circle" src="@imgOne">
+                    <h5 class="name">@Umbraco.Field("pozycja1ImieINazwisko")</h5>
+                    <p class="title">@Umbraco.Field("pozycja1StanowskoOrazFirma")</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 item">
+                <div class="box">
+                    <div class="rate"><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i></div>
+                    <p class="description">@Umbraco.Field("pozycja2Opinia")</p>
+                </div>
+                <div class="author">
+                    <img class="img-circle" src="@imgTwo">
+                    <h5 class="name">@Umbraco.Field("pozycja2ImieINazwisko")</h5>
+                    <p class="title">@Umbraco.Field("pozycja2StanowiskoOrazFirma")</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 item">
+                <div class="box">
+                    <div class="rate"><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i></div>
+                    <p class="description">@Umbraco.Field("pozycja3Opinia")</p>
+                </div>
+                <div class="author">
+                    <img class="img-circle" src="@imgThree">
+                    <h5 class="name">@Umbraco.Field("pozycja3ImieINazwisko")</h5>
+                    <p class="title">@Umbraco.Field("pozycja3StanowiskoOrazFirma")</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

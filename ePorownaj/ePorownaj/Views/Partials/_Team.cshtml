@@ -1,0 +1,60 @@
+﻿@inherits UmbracoViewPage
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    string imgOne = "";
+
+    if (Model.Content.HasValue("profile1Zdjecie"))
+    {
+        imgOne = Model.Content.GetPropertyValue<IPublishedContent>("profile1Zdjecie").Url;
+    }
+}
+<div data-aos="fade-up" id="team">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="text-center">Nasz zespół</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="thumbnail">
+                    <img class="img-circle img-responsive" src="@imgOne">
+                    <div class="caption">
+                        <h3>@Umbraco.Field("profil1ImieINazwisko")</h3>
+                        <p class="text-uppercase">@Umbraco.Field("profile1Stanowisko")</p>
+                        <p>@Umbraco.Field("profile1OMnie")</p>
+                        <hr>
+                        <p><i class="glyphicon glyphicon-earphone"></i>@Umbraco.Field("profile1NumerTelefonu")</p>
+                        <p><i class="glyphicon glyphicon-envelope"></i>@Umbraco.Field("profile1AdresEmail")</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="thumbnail">
+                    <img class="img-circle img-responsive" src="assets/img/HermioneGranger.jpg">
+                    <div class="caption">
+                        <h3>Hermione Granger</h3>
+                        <p class="text-uppercase">the scholar</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse viverra mauris eget tortor imperdiet vehicula. Proin egestas diam ac mauris molestie hendrerit. Quisque nec nisi. </p>
+                        <hr>
+                        <p><i class="glyphicon glyphicon-earphone"></i>0800 1234 457</p>
+                        <p><i class="glyphicon glyphicon-envelope"></i><a href="mailto:hermione@hogwarts.com">hermione@hogwarts.com </a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="thumbnail">
+                    <img class="img-circle img-responsive" src="assets/img/RonWeasley.jpg">
+                    <div class="caption">
+                        <h3>Ron Weasley</h3>
+                        <p class="text-uppercase">the flamboyant</p>
+                        <p>Donec lorem lorem, fringilla in consequat vel, laoreet eu quam. Nam purus magna, consequat vitae facilisis sed, eleifend a nunc. Vivamus consectetur diam non facilisis fringilla..</p>
+                        <hr>
+                        <p><i class="glyphicon glyphicon-earphone"></i>0800 1234 458</p>
+                        <p><i class="glyphicon glyphicon-envelope"></i><a href="mailto:ron@hogwarts.com">ron@hogwarts.com </a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

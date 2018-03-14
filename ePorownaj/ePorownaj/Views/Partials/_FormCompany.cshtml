@@ -1,0 +1,143 @@
+﻿@inherits UmbracoViewPage<ePorownaj.Models.FormCompanyModel>
+<div class="form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-horizontal" method="post">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Dane dotyczące firmy</h3>
+                        </div>
+                        <div class="col-md-4">
+                            <p style="line-height:20px;font-weight:normal;font-family:Lato, sans-serif;">Wprowadź dane przedmiotu ubezpieczenia.</p>
+                        </div>
+                        <div class="col-md-8">
+                            @using (Html.BeginUmbracoForm("SubmitForm", "FormCompanySurface", FormMethod.Post))
+                            {
+
+                                @Html.AntiForgeryToken()
+                                <div class="beautiful bs-callout bs-callout-info">
+                                    <h4>Informacja</h4>
+                                    <p>
+                                        WAŻNE! Dane oznakowane przy pomocy gwiazdki (*) są konieczne do wykonania kalkulacji
+                                    </p>
+
+                                    @Html.ValidationSummary()
+
+                                </div>
+                                <hr />
+                                <h3>Dane osobowe</h3>
+                                <hr />
+                                <div class="form-group">
+                                    <div class="col-md-5 col-sm-4">
+                                        @Html.LabelFor(m => m.FirstName)
+                                    </div>
+                                    <div class="col-md-7 col-sm-8">
+                                        @Html.TextBoxFor(m => m.FirstName, new Dictionary<string, object> { { "class", "form-control" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-5 col-sm-4">
+                                        @Html.LabelFor(m => m.LastName)
+                                    </div>
+                                    <div class="col-md-7 col-sm-8">
+                                        @Html.TextBoxFor(m => m.LastName, new Dictionary<string, object> { { "class", "form-control" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-5 col-sm-4">
+                                        @Html.LabelFor(m => m.EmailAddress)
+                                    </div>
+                                    <div class="col-md-7 col-sm-8">
+                                        @Html.TextBoxFor(m => m.EmailAddress, new Dictionary<string, object> { { "class", "form-control" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-5 col-sm-4">
+                                        @Html.LabelFor(m => m.PhoneNumber)
+                                    </div>
+                                    <div class="col-md-7 col-sm-8">
+                                        @Html.TextBoxFor(m => m.PhoneNumber, new Dictionary<string, object> { { "class", "form-control" } })
+                                    </div>
+                                </div>
+                                <hr />
+                                <h3>Dane dotyczące firmy</h3>
+                                <hr />
+                                <div class="form-group">
+                                    <div class="col-md-5 col-sm-4">
+                                        @Html.LabelFor(m => m.CompanyName)
+                                    </div>
+                                    <div class="col-md-7 col-sm-8">
+                                        @Html.TextBoxFor(m => m.CompanyName, new Dictionary<string, object> { { "class", "form-control" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-5 col-sm-4">
+                                        @Html.LabelFor(m => m.NIP)
+                                    </div>
+                                    <div class="col-md-7 col-sm-8">
+                                        @Html.TextBoxFor(m => m.NIP, new Dictionary<string, object> { { "class", "form-control" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-5 col-sm-4">
+                                        @Html.LabelFor(m => m.Claims)
+                                    </div>
+                                    <div class="col-md-7 col-sm-8">
+                                        @Html.DropDownListFor(m => m.Claims, Model.ClaimsTypes, "Wybierz...", new Dictionary<string, object> { { "class", "form-control" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-5 col-sm-4">
+                                        @Html.LabelFor(m => m.PKD)
+                                    </div>
+                                    <div class="col-md-7 col-sm-8">
+                                        @Html.TextBoxFor(m => m.PKD, new Dictionary<string, object> { { "class", "form-control" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-5 col-sm-4">
+                                        @Html.LabelFor(m => m.PostCode)
+                                    </div>
+                                    <div class="col-md-7 col-sm-8">
+                                        @Html.TextBoxFor(m => m.PostCode, new Dictionary<string, object> { { "class", "form-control" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-5 col-sm-4">
+                                        @Html.LabelFor(m => m.Employees)
+                                    </div>
+                                    <div class="col-md-7 col-sm-8">
+                                        @Html.TextBoxFor(m => m.Employees, new Dictionary<string, object> { { "class", "form-control" } })
+                                    </div>
+                                </div>
+                                <hr />
+                                <h3>Niezbędna zgoda</h3>
+                                <hr />
+                                <div class="form-group">
+                                    <div class="col-md-1 col-sm-8">
+                                        @Html.CheckBoxFor(m => m.Agreement, new Dictionary<string, object> { { "class", "control-label" } })
+                                    </div>
+                                    <div class="col-md-11 col-sm-4">
+                                        <label class="control-label">
+                                            Wyrażam zgodę na przetwarzanie swoich danych osobowych w celach marketingowych przez ePorównaj Sp. z o.o. zgodnie z ustawą z dnia 29 sierpnia 1997 r. o ochronie danych osobowych (tekst jednolity: Dz.U. 2002 r. Nr
+                                            101 poz. 926 z późn. zm.) oraz na otrzymywanie od ePorównaj Sp. z o.o. informacji handlowychdrogą elektroniczną zgodnie z ustawą z dnia 18.07.2002 r. (Dz.U. nr 144, poz.1204 z późn. zm.)o świadczeniu usług drogą elektroniczną.
+                                        </label>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="form-group">
+                                    <div class="col-md-1 col-sm-8">
+                                        <button>Wyślij</button>
+                                    </div>
+                                </div>
+                                <br />
+                            }
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

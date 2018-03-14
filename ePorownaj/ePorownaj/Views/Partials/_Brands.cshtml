@@ -1,0 +1,17 @@
+﻿@inherits UmbracoViewPage
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+<div class="brands">
+    <a href="#" data-aos="fade-up">
+        @{
+            if (Model.Content.HasValue("nasiPartnerzy",true))
+            {
+                var typedMultiMediaPicker = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("nasiPartnerzy",true);
+                foreach (var item in typedMultiMediaPicker)
+                {
+            <img src="@item.Url" />
+                    }
+                }
+            }
+    </a>
+</div>
